@@ -16,6 +16,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    
+    - name: Inject GitHub Token Into Settings
+      run: |
+          sed -i -e 's/TOKEN/'$GITHUB_TOKEN'/g' .m2/settings.xml
+          cat .m2/settings.xml
+      env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         # server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         # settings-path: ${{ github.workspace }} # location for the settings.xml file
 
@@ -23,6 +30,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/pramodhmdt
+      run: mvn deploy --settings .m2/settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
