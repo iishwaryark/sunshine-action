@@ -6,7 +6,6 @@
   <name>JavaTestDemo</name>
   <packaging>jar</packaging>
   <description>This is Java Testing Demo</description>
-  <url>http://maven.pkg.github.com/devtools-india</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,16 +68,35 @@
     </plugins>
   </build>
 
-  <distributionManagement>
-    <repository>
+<activeProfiles>
+    <activeProfile>github</activeProfile>
+  </activeProfiles>
+
+  <profiles>
+    <profile>
       <id>github</id>
-      <url>https://maven.pkg.github.com/devtools-india/javatestdemo</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </distributionManagement>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <repository>
+          <id>github</id>
+          <name>GitHub Apache Maven Packages</name>
+          <url>https://maven.pkg.github.com/pramodhmdt/sunshine-action</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <servers>
+    <server>
+      <id>github</id>
+      <username>pramodhmdt</username>
+      <password> ${{ github.git_token }} </password>
+    </server>
+  </servers>
+</settings>
 </project>
