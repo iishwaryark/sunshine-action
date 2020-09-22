@@ -30,6 +30,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/PramodhMDT -Dtoken=GIT_TOKEN
+      run: mvn deploy 
       env:
-        GITHUB_TOKEN: ${{ github.GIT_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
