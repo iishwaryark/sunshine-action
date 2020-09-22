@@ -19,10 +19,10 @@ jobs:
       
     - name: Inject GitHub Token Into Settings
       run: |
-          sed -i -e 's/TOKEN/'$GIT_TOKEN'/g' .m2/settings.xml
+          sed -i -e 's/TOKEN/'$GITHUB_TOKEN'/g' .m2/settings.xml
           cat .m2/settings.xml
       env:
-          GITHUB_TOKEN: ${{secrets.add_git}}
+          GITHUB_TOKEN: ${{secrets.GIT_TOKEN}}
         # server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         # settings-path: ${{ github.workspace }} # location for the settings.xml file
 
