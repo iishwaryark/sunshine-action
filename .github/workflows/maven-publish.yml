@@ -23,6 +23,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy --settings .m2/settings.xml
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/PramodhMDT
       env:
         GITHUB_TOKEN: ${{secrets.GIT_TOKEN}}
