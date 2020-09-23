@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sunshineaction</groupId>
   <artifactId>sunshineaction</artifactId>
-  <version>1.2.3</version>
+  <version>1.2.4</version>
   <name>JavaTestDemo</name>
   <packaging>jar</packaging>
   <description>This is Java Testing Demo</description>
@@ -33,11 +33,6 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.sunshineaction</groupId>
-      <artifactId>sunshineaction</artifactId>
-      <version>1.2.3</version>
     </dependency>
   </dependencies>
 
