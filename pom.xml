@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sunshineaction</groupId>
   <artifactId>sunshineaction</artifactId>
-  <version>1.2.5</version>
+  <version>1.2.6</version>
   <name>JavaTestDemo</name>
   <packaging>jar</packaging>
   <description>This is Java Testing Demo</description>
@@ -15,16 +15,6 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-  
-  <repositories>
-    <repository>
-        <id>github</id>
-        <name>GitHub PramodhMDT Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/pramodhmdt/sunshine-action</url>
-        <releases><enabled>true</enabled></releases>
-        <snapshots><enabled>true</enabled></snapshots>
-    </repository>
-  </repositories>
 
   <dependencies>
     <dependency>
